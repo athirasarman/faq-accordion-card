@@ -3,7 +3,7 @@ import AccordionItem from "./accordion-item";
 // import IconMinus from "../assets/images/icon-minus.svg";
 // import IconPlus from "../assets/images/icon-plus.svg";
 
-function Accordion({ items }) {
+function Accordion({ key,items }) {
   const [openIndex, setOpenIndex] = useState(0); // Index of the initially open item
   // let buttonImage = IconPlus;
 
@@ -19,6 +19,7 @@ function Accordion({ items }) {
     <div className="accordion">
       {items.map((item, index) => (
         <AccordionItem
+          index={index} 
           title={item.title}
           content={item.content}
           isOpen={index === openIndex}
