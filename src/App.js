@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <div className="accordion-card">
-        <div className="banner">
+        <div className="banner-mobile">
           <div className="logo">
             <img className="illustration" src={IllustrationMobile} alt="logo" />
             <img className="shadow" src={BackgroundMobile} alt="logo-image" />

@@ -9,9 +9,9 @@ function Accordion({ key,items }) {
     getImage(index);
   };
   const getImage = (index) => {
-    let el=document.getElementById("openicon"+index);
-    el.classList.remove("open");
-    el.classList.add("close");
+    // let el=document.getElementById("openicon"+index);
+    // el.classList.remove("open");
+    // el.classList.add("close");
   };
 
   return (

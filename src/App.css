@@ -13,7 +13,7 @@
   margin: 120px 24px 57px 24px;
   border-radius: 32px;
 }
-.banner {
+.banner-mobile {
   position: absolute;
   top: -26%;
 }
@@ -35,4 +35,11 @@
 }
 .content{
   margin-top: 100px;
+}
+
+@media (min-width:768px){
+  .accordion-card {
+    display: flex;
+    flex-direction: row;
+  }
 }
