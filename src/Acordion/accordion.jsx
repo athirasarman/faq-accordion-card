@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import AccordionItem from "./accordion-item";
-// import IconMinus from "../assets/images/icon-minus.svg";
-// import IconPlus from "../assets/images/icon-plus.svg";
 
 function Accordion({ key,items }) {
   const [openIndex, setOpenIndex] = useState(0); // Index of the initially open item
-  // let buttonImage = IconPlus;
 
   const handleToggle = (index) => {
     setOpenIndex(index === openIndex ? -1 : index);
     getImage(index);
   };
   const getImage = (index) => {
-  //  return buttonImage = index === openIndex ? IconMinus : IconPlus;
+    let el=document.getElementById("openicon"+index);
+    el.classList.remove("open");
+    el.classList.add("close");
   };
 
   return (
@@ -24,7 +23,6 @@ function Accordion({ key,items }) {
           content={item.content}
           isOpen={index === openIndex}
           onToggle={() => handleToggle(index)}
-          // buttonImage={getImage(index)}
           showDivider={index!=items.length-1}
         />
       ))}

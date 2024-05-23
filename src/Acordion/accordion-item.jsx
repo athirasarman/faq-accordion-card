@@ -1,24 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import "./accordion-item.css";
 import imageSrc from "../assets/images/icon-arrow-down.svg";
 
-function AccordionItem({key,index, showDivider,title, content, isOpen, onToggle,buttonImage }) {
-  // const [isOpen, setIsOpen] = useState(false);
-  // Define state to hold the image source
-  // const [imageSrc, setImageSrc] = useState(buttonImage);
-  // Function to change the image source
+function AccordionItem({
+  key,
+  index,
+  showDivider,
+  title,
+  content,
+  isOpen,
+  onToggle,
+  buttonImage,
+}) {
+  // Function to change the image alignment
   const changeImage = () => {
-    // Update the image source based on some condition or variable
     if (isOpen) {
-      // setImageSrc(IconPlus);
-      let el=document.getElementById("openicon"+index);
+      let el = document.getElementById("openicon" + index);
       el.classList.remove("close");
       el.classList.add("open");
     } else {
-      // setImageSrc(IconMinus);
-      let el=document.getElementById("openicon"+index);
-        el.classList.remove("open");
-        el.classList.add("close");
+      let el = document.getElementById("openicon" + index);
+      el.classList.remove("open");
+      el.classList.add("close");
     }
   };
 
@@ -30,13 +33,17 @@ function AccordionItem({key,index, showDivider,title, content, isOpen, onToggle,
   return (
     <div className="accordion-item">
       <div className="accordion-header" onClick={toggleAccordion}>
-        <span className="title">{title}</span>
+        <span  className={`title ${isOpen ? 'active-title' : ''}`}>{title}</span>
         <span className="open-close">
-          <img id={"openicon"+index} src={imageSrc} alt="Open-Close" />
+          <img id={"openicon" + index} src={imageSrc} alt="Open-Close" />
         </span>
       </div>
-      {isOpen && <div className="accordion-content">{content}</div>}
-     {showDivider &&  <div className="divider"></div>}
+      {isOpen && (
+        <div className="accordion-content">
+          {content}
+          <div className="divider"></div>
+        </div>
+      )}
     </div>
   );
 }
