@@ -33,17 +33,14 @@ function AccordionItem({
   return (
     <div className="accordion-item">
       <div className="accordion-header" onClick={toggleAccordion}>
-        <span  className={`title ${isOpen ? 'active-title' : ''}`}>{title}</span>
+        <span className={`title ${isOpen ? "active-title" : ""}`}>{title}</span>
         <span className="open-close">
           <img id={"openicon" + index} src={imageSrc} alt="Open-Close" />
         </span>
       </div>
-      {isOpen && (
-        <div className="accordion-content">
-          {content}
-          <div className="divider"></div>
-        </div>
-      )}
+      {isOpen && <div className="accordion-content">{content}</div>}
+
+      {showDivider && <div className="divider"></div>}
     </div>
   );
 }
